@@ -5,7 +5,7 @@ metadata:
   name: jenkins-wordpress
 subjects:
 - kind: ServiceAccount
-  name: jenkins
+  name: qsrjenkins
 roleRef:
   kind: Role
   name: jenkins
