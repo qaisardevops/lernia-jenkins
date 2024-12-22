@@ -1,18 +1,18 @@
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
   name: jenkins
 rules:
 - apiGroups: [""]
   resources: ["namespaces"]
-  verbs: ["get", "list", "watch", "create"] # Added "create" verb for namespaces
+  verbs: ["get", "list", "watch", "create", "delete"]  # Grant permissions to create namespaces
+- apiGroups: ["project.openshift.io"]
+  resources: ["projectrequests"]
+  verbs: ["create"]  # Grant permissions to create OpenShift projects
 - apiGroups: [""]
   resources: ["pods"]
   verbs: ["delete"]
 - apiGroups: ["apps"]
   resources: ["deployments"]
   verbs: ["get", "list", "delete", "create", "patch"]
-- apiGroups: ["project.openshift.io"]
-  resources: ["projectrequests"]
-  verbs: ["create"] # Added permission to create projects
