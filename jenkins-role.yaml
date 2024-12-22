@@ -6,10 +6,13 @@ metadata:
 rules:
 - apiGroups: [""]
   resources: ["namespaces"]
-  verbs: ["get", "list", "watch"]
+  verbs: ["get", "list", "watch", "create"] # Added "create" verb for namespaces
 - apiGroups: [""]
   resources: ["pods"]
   verbs: ["delete"]
 - apiGroups: ["apps"]
   resources: ["deployments"]
   verbs: ["get", "list", "delete", "create", "patch"]
+- apiGroups: ["project.openshift.io"]
+  resources: ["projectrequests"]
+  verbs: ["create"] # Added permission to create projects
