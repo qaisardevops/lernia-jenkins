@@ -6,7 +6,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: qsrjenkins
-  namespace: <your-namespace>  # Replace <your-namespace> with the namespace where the service account is created (e.g., jenkins)
+  namespace: qsrautowordpress  # Replace <your-namespace> with the namespace where the service account is created (e.g., jenkins)
 roleRef:
   kind: ClusterRole
   name: jenkins
